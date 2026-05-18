@@ -1,46 +1,93 @@
-# Brofit 🏋️‍♂️💪
+# FitNexus 🏋️‍♂️🥗
 
-Welcome to **Brofit**, the ultimate next-generation fitness companion designed to elevate your training, track your performance, and help you smash your personal records.
+FitNexus is a state-of-the-art, premium, and minimalist personal fitness & health management portal. Built with **Laravel 12**, **Vite (TailwindCSS)**, **MongoDB (Atlas)**, and integrated with **OpenAI / OpenRouter AI Coaches**. 
 
-## Features 🚀
+Featuring a solid, high-contrast **Forest Green & Off-Black minimalist aesthetic** with sharp square borders, zero clutter, and instantaneous transitions.
 
-- **Progressive Overload Tracking:** Log sets, reps, and weights to ensure you're always improving.
-- **Workout Planning:** Design custom routines or follow structured programs.
-- **Biometric Analytics:** Keep track of vital stats and progress over time.
-- **Sleek, Modern Interface:** Focused on speed, usability, and premium visuals.
+---
 
-## Getting Started 🏁
+## 🚀 Key Features
 
-### Prerequisites
+*   **📊 Dynamic Fitness Dashboard**: Live streak trackers, daily task progress calculators, and workout completion summaries.
+*   **📚 Premium Course Syllabus**: Surf through available HIIT, Strength, and Yoga programs with fully featured enrollment systems.
+*   **💪 target Exercise Library**: Complete muscular breakdown of target exercises with seamless options to add them to daily tracker cards.
+*   **🍏 Calorie & Nutrition Portal**: Log food grams, monitor macronutrient percentages (Protein / Carbs / Fat), and estimate calories burned.
+*   **🤖 Dynamic AI Fitness Coach**: Real-time chat advisor that dynamically auto-detects and supports both standard **OpenAI API keys** and **OpenRouter API Keys** to generate detailed 7-day personalized workout & meal regimens.
+*   **🔒 Self-Healing & Robust**: Implements absolute offline database-safe fallbacks. If MongoDB is offline, unseeded, or missing, the entire application gracefully degrades to high-fidelity mock previews so the portal remains completely surfable!
 
-- Git
-- Node.js (v18+ recommended)
-- Your favorite package manager (npm, pnpm, or yarn)
+---
 
-### Installation
+## 🛠️ Contributor Setup & Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/harmeet2716/Brofit.git
-   cd Brofit
-   ```
+To run this project locally and collaborate with the team, follow these simple setup steps:
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/fitnexus.git
+cd fitnexus
+```
 
-3. Run the development server:
-   ```bash
-   npm run dev
-   ```
+### 2. Install Project Dependencies
+Run both composer and node packages installers:
+```bash
+composer install
+npm install
+```
 
-## Tech Stack 🛠️
+### 3. Setup Your Environment File
+Create a new `.env` file by copying the template:
+```bash
+cp .env.example .env
+```
+Open the `.env` file and generate a secure application key:
+```bash
+php artisan key:generate
+```
 
-- **Frontend:** HTML, CSS, JavaScript (React / Next.js / Vite)
-- **Styling:** Custom Vanilla CSS for rich glassmorphic aesthetics
-- **State Management:** Local / Context API
+### 4. Configure Database & AI Key
+Edit your `.env` file to provide your database connection credentials and AI API keys:
 
-## License 📄
+*   **Database (MongoDB Atlas Cloud or Local)**:
+    ```ini
+    DB_CONNECTION=mongodb
+    MONGODB_URI=your_mongodb_connection_uri_here
+    MONGODB_DATABASE=fitnexus
+    ```
+*   **AI Coach API Key (OpenAI or OpenRouter)**:
+    ```ini
+    # Standard OpenAI keys or OpenRouter keys (sk-or-...) are both supported!
+    OPENAI_API_KEY=your_api_key_here
+    ```
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+### 5. Run Database Migrations & Seeds
+Prepare the database schemas and automatically seed all premium courses, target exercises, and default accounts:
+```bash
+php artisan migrate
+php artisan db:seed
+```
+*Note: The default credentials for the seeded Demo account are `demo@fitportal.com` / `password`.*
+
+### 6. Compile Styling Assets
+Compile assets in development or build them for production:
+```bash
+# Compile and hot reload
+npm run dev
+
+# Or build static assets
+npm run build
+```
+
+### 7. Launch local server
+Start the local PHP Artisan development server:
+```bash
+php artisan serve
+```
+Open **`http://127.0.0.1:8000`** in your browser and enjoy **FitNexus**!
+
+---
+
+## 📁 Architectural highlights
+
+*   **Self-Healing Key Detection**: Inside [AiCoachController.php](app/Http/Controllers/AiCoachController.php), the engine dynamically scans your `OPENAI_API_KEY` format. If it detects an OpenRouter key (`sk-or-`), it reroutes requests to the OpenRouter gateway and injects the required title/referrer headers automatically.
+*   **Zero-Crash BSON Key Normalizer**: Integrates BSON primary key handlers in controllers to map database `id` BSON objects and `_id` template parameters uniformly, ensuring 100% template compatibility.
+*   **Universal Square Borders & Minimalist Palette**: Enabled globally via universal CSS rules inside [app.css](resources/css/app.css) to override default styling templates, ensuring an extremely sleek, high-contrast, professional forest green palette.

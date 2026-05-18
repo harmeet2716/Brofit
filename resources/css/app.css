@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Clean & Flat Green & White/Grey Theme Rules */
+@layer base {
+    /* ☀️ LIGHT MODE: Pure clean white and gray */
+    body {
+        background-color: #ffffff !important;
+        color: #111827 !important;
+    }
+
+    /* 🌙 DARK MODE: Pure flat neutral charcoal grey (NO GLOW, NO BLACK ON RED) */
+    html.dark body {
+        background-color: #111827 !important; /* Stark dark grey background */
+        color: #f3f4f6 !important;
+    }
+
+    /* Force all layout boxes to have absolute square corners */
+    *, ::before, ::after {
+        border-radius: 0px !important;
+    }
+
+    /* Disable all drop shadows, glowing effects, and blurs globally */
+    *, ::before, ::after {
+        box-shadow: none !important;
+        text-shadow: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    /* Disable all animation, transitions, and hover pings */
+    *, ::before, ::after {
+        transition: none !important;
+        transition-property: none !important;
+        transition-duration: 0ms !important;
+        animation: none !important;
+        animation-duration: 0ms !important;
+    }
+
+    /* Flat solid white background for cards/containers in Light Mode */
+    .bg-white {
+        background-color: #ffffff !important;
+    }
+
+    /* Flat neutral solid grey background for cards/containers in Dark Mode */
+    html.dark .bg-white,
+    html.dark .dark\:bg-gray-900,
+    html.dark .dark\:bg-gray-800,
+    html.dark .bg-gray-50,
+    html.dark .bg-gray-100 {
+        background-color: #1f2937 !important; /* Charcoal card grey background */
+    }
+
+    /* High contrast text elements for Dark Mode */
+    html.dark .text-gray-950,
+    html.dark .text-gray-900,
+    html.dark .text-black,
+    html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
+        color: #ffffff !important;
+    }
+
+    html.dark .text-gray-500,
+    html.dark .text-gray-400 {
+        color: #9ca3af !important;
+    }
+
+    /* Simple, clean, plain borders - Light Gray in Light Mode, Neutral Charcoal in Dark Mode */
+    aside, header, main, div, section, article, nav, button, a, input, select, textarea {
+        border-color: #e5e7eb !important; /* simple light gray border */
+    }
+
+    html.dark aside,
+    html.dark header,
+    html.dark main,
+    html.dark div,
+    html.dark section,
+    html.dark article,
+    html.dark nav,
+    html.dark button,
+    html.dark a,
+    html.dark input,
+    html.dark select,
+    html.dark textarea {
+        border-color: #374151 !important; /* clean plain dark grey border */
+    }
+
+    /* Accent color overrides - Clean Deep Forest Green (#15803D) - NO parrot/lime green allowed */
+    .text-fit-green, .text-fit-green-dark {
+        color: #15803D !important;
+    }
+    
+    .bg-fit-green, .bg-fit-green-dark, .hover\:bg-fit-green-dark:hover {
+        background-color: #15803D !important;
+        color: #ffffff !important;
+        background-image: none !important;
+    }
+
+    /* Fallbacks for soft background highlights */
+    .bg-fit-green\/10 {
+        background-color: #f0fdf4 !important; /* Soft plain light green in Light Mode */
+    }
+    
+    html.dark .bg-fit-green\/10 {
+        background-color: #14532d !important; /* Deep forest green highlight in Dark Mode */
+        color: #4ade80 !important;
+    }
+
+    /* Remove all linear background gradients to keep design strictly flat */
+    .bg-gradient-to-r, .bg-gradient-to-tr, .bg-gradient-to-b {
+        background-image: none !important;
+        background-color: #ffffff !important;
+    }
+
+    html.dark .bg-gradient-to-r,
+    html.dark .bg-gradient-to-tr,
+    html.dark .bg-gradient-to-b {
+        background-image: none !important;
+        background-color: #1f2937 !important;
+    }
+}

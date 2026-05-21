@@ -20,7 +20,7 @@
         @csrf
         <input type="hidden" name="date" value="{{ $date }}">
         <button type="submit" class="w-full md:w-auto px-5 py-2.5 bg-gray-50 dark:bg-gray-850 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 font-bold border border-gray-200 dark:border-gray-800 rounded-xl transition-all duration-200 text-sm flex items-center justify-center gap-1.5">
-            📋 Copy Yesterday's Goals
+ Copy Yesterday's Goals
         </button>
     </form>
 </div>
@@ -116,10 +116,10 @@
                     <div class="w-full md:w-40">
                         <select name="type" required
                             class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-fit-green outline-none text-sm">
-                            <option value="workout">💪 Workout</option>
-                            <option value="nutrition">🍏 Nutrition</option>
-                            <option value="rest">💤 Rest</option>
-                            <option value="other">🔮 Other</option>
+                            <option value="workout">Workout</option>
+                            <option value="nutrition">Nutrition</option>
+                            <option value="rest">Rest</option>
+                            <option value="other">Other</option>
                         </select>
                     </div>
 

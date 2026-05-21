@@ -9,7 +9,7 @@
 <!-- Banner alerting if API key is not configured -->
 @if(!$apiAvailable)
     <div class="p-4 mb-6 rounded-2xl bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 text-amber-850 dark:text-amber-400 text-sm flex gap-3 shadow-sm">
-        <span class="text-xl">⚠️</span>
+        <span class="text-xl"></span>
         <div>
             <span class="font-bold block">OpenAI API Key Not Found!</span>
             <span class="block mt-1">Please set your `OPENAI_API_KEY` inside the `.env` file to fully unlock dynamic AI chat coaching and weekly customized planners.</span>
@@ -63,7 +63,7 @@
                 <!-- Welcome prompt message -->
                 <div class="flex flex-col items-center justify-center h-full text-center p-6 space-y-3">
                     <div class="w-16 h-16 bg-fit-green/10 rounded-full flex items-center justify-center text-3xl">
-                        🤖
+
                     </div>
                     <h4 class="text-base font-bold text-gray-800 dark:text-gray-250">Ask your biometrics personal trainer!</h4>
                     <p class="text-xs text-gray-450 dark:text-gray-550 max-w-sm">"Hey Coach, can you suggest an intermediate core workout plan?" or "How many carbs should I eat before jogging?"</p>
@@ -99,12 +99,12 @@
                         <span class="text-xs font-black uppercase text-fit-green tracking-widest">{{ $dayPlan['day'] }}</span>
                         
                         <div class="space-y-1 pt-1">
-                            <span class="text-xs font-bold text-gray-400 block uppercase tracking-wider">🏋️ Workout routine:</span>
+                            <span class="text-xs font-bold text-gray-400 block uppercase tracking-wider">Workout routine:</span>
                             <p class="text-sm text-gray-800 dark:text-gray-250 leading-relaxed font-semibold">{{ $dayPlan['workout'] }}</p>
                         </div>
                         
                         <div class="space-y-1 pt-1">
-                            <span class="text-xs font-bold text-gray-400 block uppercase tracking-wider">🍏 Nutrition plan:</span>
+                            <span class="text-xs font-bold text-gray-400 block uppercase tracking-wider">Nutrition plan:</span>
                             <p class="text-sm text-gray-800 dark:text-gray-250 leading-relaxed font-semibold">{{ $dayPlan['nutrition'] }}</p>
                         </div>
                     </div>
@@ -114,7 +114,7 @@
             <!-- Generate trigger button placeholder -->
             <div class="flex-1 flex flex-col items-center justify-center text-center p-6 space-y-5">
                 <div class="w-16 h-16 bg-fit-green/10 rounded-full flex items-center justify-center text-3xl">
-                    📅
+
                 </div>
                 <h4 class="text-base font-bold text-gray-800 dark:text-gray-250">No plan compiled yet!</h4>
                 <p class="text-xs text-gray-450 dark:text-gray-550 max-w-xs">Run the compiler to build a personalized calendar split mapping exercises and foods to your fitness goal.</p>
@@ -123,7 +123,7 @@
                     @csrf
                     <button type="submit" id="plan-submit-btn" {{ !$apiAvailable ? 'disabled' : '' }}
                         class="px-6 py-3 bg-fit-green hover:bg-fit-green-dark text-white font-extrabold rounded-xl transition-all duration-300 shadow-md shadow-fit-green/20 text-sm flex items-center justify-center">
-                        ⚡ Generate Weekly Planner
+ Generate Weekly Planner
                     </button>
                 </form>
             </div>

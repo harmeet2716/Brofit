@@ -1,4 +1,4 @@
-# FitNexus 🏋️‍♂️🥗
+# FitNexus
 
 FitNexus is a state-of-the-art, premium, and minimalist personal fitness & health management portal. Built with **Laravel 12**, **Vite (TailwindCSS)**, **MongoDB (Atlas)**, and integrated with **OpenAI / OpenRouter AI Coaches**. 
 
@@ -6,18 +6,18 @@ Featuring a solid, high-contrast **Forest Green & Off-Black minimalist aesthetic
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
-*   **📊 Dynamic Fitness Dashboard**: Live streak trackers, daily task progress calculators, and workout completion summaries.
-*   **📚 Premium Course Syllabus**: Surf through available HIIT, Strength, and Yoga programs with fully featured enrollment systems.
-*   **💪 target Exercise Library**: Complete muscular breakdown of target exercises with seamless options to add them to daily tracker cards.
-*   **🍏 Calorie & Nutrition Portal**: Log food grams, monitor macronutrient percentages (Protein / Carbs / Fat), and estimate calories burned.
-*   **🤖 Dynamic AI Fitness Coach**: Real-time chat advisor that dynamically auto-detects and supports both standard **OpenAI API keys** and **OpenRouter API Keys** to generate detailed 7-day personalized workout & meal regimens.
-*   **🔒 Self-Healing & Robust**: Implements absolute offline database-safe fallbacks. If MongoDB is offline, unseeded, or missing, the entire application gracefully degrades to high-fidelity mock previews so the portal remains completely surfable!
+*   **Dynamic Fitness Dashboard**: Live streak trackers, daily task progress calculators, and workout completion summaries.
+*   **Premium Course Syllabus**: Surf through available HIIT, Strength, and Yoga programs with fully featured enrollment systems.
+*   **target Exercise Library**: Complete muscular breakdown of target exercises with seamless options to add them to daily tracker cards.
+*   **Calorie & Nutrition Portal**: Log food grams, monitor macronutrient percentages (Protein / Carbs / Fat), and estimate calories burned.
+*   **Dynamic AI Fitness Coach**: Real-time chat advisor that dynamically auto-detects and supports both standard **OpenAI API keys** and **OpenRouter API Keys** to generate detailed 7-day personalized workout & meal regimens.
+*   **Self-Healing & Robust**: Implements absolute offline database-safe fallbacks. If MongoDB is offline, unseeded, or missing, the entire application gracefully degrades to high-fidelity mock previews so the portal remains completely surfable!
 
 ---
 
-## 🛠️ Contributor Setup & Installation
+## Contributor Setup & Installation
 
 To run this project locally and collaborate with the team, follow these simple setup steps:
 
@@ -86,7 +86,7 @@ Open **`http://127.0.0.1:8000`** in your browser and enjoy **FitNexus**!
 
 ---
 
-## 📁 Architectural highlights
+## Architectural highlights
 
 *   **Self-Healing Key Detection**: Inside [AiCoachController.php](app/Http/Controllers/AiCoachController.php), the engine dynamically scans your `OPENAI_API_KEY` format. If it detects an OpenRouter key (`sk-or-`), it reroutes requests to the OpenRouter gateway and injects the required title/referrer headers automatically.
 *   **Zero-Crash BSON Key Normalizer**: Integrates BSON primary key handlers in controllers to map database `id` BSON objects and `_id` template parameters uniformly, ensuring 100% template compatibility.

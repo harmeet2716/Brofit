@@ -178,7 +178,7 @@ class ExerciseController extends Controller
                 ]);
             }
 
-            session()->flash('success', 'Added "' . $exercise['name'] . '" to today\'s fitness goals! Let\'s do it! 💪');
+            session()->flash('success', 'Added "' . $exercise['name'] . '" to today\'s fitness goals! Let\'s do it!');
             return redirect()->route('daily-goals.index');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to add exercise to daily goals: ' . $e->getMessage());

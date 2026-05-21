@@ -27,7 +27,7 @@ class AuthenticatedSessionController extends Controller
         session(['fitness_goal' => $user->fitness_goal ?? 'stay_fit']);
 
         // Welcome flash message
-        session()->flash('success', "Welcome back, {$user->name}! Ready to crush your goals? 💪");
+        session()->flash('success', "Welcome back, {$user->name}! Ready to crush your goals?");
 
         return redirect()->intended(route('dashboard', absolute: false));
     }

@@ -4,13 +4,13 @@
 
 /* Global Clean & Flat Green & White/Grey Theme Rules */
 @layer base {
-    /* ☀️ LIGHT MODE: Pure clean white and gray */
+    /* LIGHT MODE: Pure clean white and gray */
     body {
         background-color: #ffffff !important;
         color: #111827 !important;
     }
 
-    /* 🌙 DARK MODE: Pure flat neutral charcoal grey (NO GLOW, NO BLACK ON RED) */
+    /* DARK MODE: Pure flat neutral charcoal grey (NO GLOW, NO BLACK ON RED) */
     html.dark body {
         background-color: #111827 !important; /* Stark dark grey background */
         color: #f3f4f6 !important;

@@ -70,15 +70,34 @@ class NutritionController extends Controller
             // Food database
             $foodDatabase = $this->getFoodDatabase();
 
-            // Calorie Goal logic based on user's fitness goal
+            // Calculate BMR and Maintenance Calories based on user's profile data (Mifflin-St Jeor)
+            $weight = (float) ($user->weight_kg ?? 70);
+            $height = (float) ($user->height_cm ?? 175);
+            $age = (int) ($user->age ?? 25);
             $goal = $user->fitness_goal ?? 'stay_fit';
-            $calorieGoals = [
-                'lose_weight' => 1800,
-                'build_muscle' => 2800,
-                'stay_fit' => 2200,
-                'improve_endurance' => 2500,
-            ];
-            $calorieGoal = $calorieGoals[$goal] ?? 2200;
+
+            $bmr = (10 * $weight) + (6.25 * $height) - (5 * $age) + 5;
+            $maintenanceCalories = round($bmr * 1.4);
+
+            // Calorie & macro targets based on fitness goals
+            if ($goal === 'lose_weight') {
+                $calorieGoal = max(1200, $maintenanceCalories - 500);
+                $proteinRatio = 0.35; $fatRatio = 0.25; $carbsRatio = 0.40;
+            } elseif ($goal === 'build_muscle') {
+                $calorieGoal = $maintenanceCalories + 400;
+                $proteinRatio = 0.30; $fatRatio = 0.25; $carbsRatio = 0.45;
+            } elseif ($goal === 'improve_endurance') {
+                $calorieGoal = $maintenanceCalories + 200;
+                $proteinRatio = 0.20; $fatRatio = 0.25; $carbsRatio = 0.55;
+            } else { // stay_fit
+                $calorieGoal = $maintenanceCalories;
+                $proteinRatio = 0.25; $fatRatio = 0.25; $carbsRatio = 0.50;
+            }
+            $calorieGoal = round($calorieGoal);
+
+            $targetProtein = round(($calorieGoal * $proteinRatio) / 4);
+            $targetCarbs = round(($calorieGoal * $carbsRatio) / 4);
+            $targetFat = round(($calorieGoal * $fatRatio) / 9);
 
             try {
                 // Fetch today's food logs via Query Builder
@@ -212,6 +231,10 @@ class NutritionController extends Controller
                 'date',
                 'foodDatabase',
                 'calorieGoal',
+                'maintenanceCalories',
+                'targetProtein',
+                'targetCarbs',
+                'targetFat',
                 'logs',
                 'totals',
                 'weeklyHistory',

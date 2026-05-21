@@ -21,7 +21,7 @@
                 {{ $exercise['difficulty'] }}
             </span>
             <span class="text-xs font-semibold text-fit-green flex items-center bg-fit-green/10 px-2 py-0.5 rounded-full">
-                🔥 {{ $exercise['calories_burned_per_set'] }} Cal/Set
+ {{ $exercise['calories_burned_per_set'] }} Cal/Set
             </span>
         </div>
 

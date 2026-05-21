@@ -22,7 +22,7 @@ Route::get('/exercises', [ExerciseController::class, 'index'])->name('exercises.
 Route::get('/exercises/{id}', [ExerciseController::class, 'show'])->name('exercises.show');
 Route::get('/nutrition', [NutritionController::class, 'index'])->name('nutrition.index');
 
-// 🔒 PROTECTED ACTIONS / PROFILE ROUTES (Only registered/logged-in users can access)
+// PROTECTED ACTIONS / PROFILE ROUTES (Only registered/logged-in users can access)
 Route::middleware(['auth'])->group(function () {
     // Profile
     Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');

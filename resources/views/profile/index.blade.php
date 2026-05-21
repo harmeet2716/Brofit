@@ -13,10 +13,10 @@
     }
 
     $goalLabels = [
-        'lose_weight' => '🏃 Lose Weight',
-        'build_muscle' => '💪 Build Muscle',
-        'stay_fit' => '🌿 Stay Fit',
-        'improve_endurance' => '⚡ Improve Endurance',
+        'lose_weight' => 'Lose Weight',
+        'build_muscle' => 'Build Muscle',
+        'stay_fit' => 'Stay Fit',
+        'improve_endurance' => 'Improve Endurance',
     ];
     $goal = $user->fitness_goal ?? 'stay_fit';
     $goalText = $goalLabels[$goal] ?? 'Stay Fit';

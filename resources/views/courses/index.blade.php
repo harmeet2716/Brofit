@@ -13,10 +13,10 @@
         <div class="flex-1">
             <label for="difficulty" class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Difficulty Level</label>
             <select name="difficulty" id="difficulty" class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-fit-green outline-none text-sm">
-                <option value="all" {{ $difficulty === 'all' || !$difficulty ? 'selected' : '' }}>🌟 All Levels</option>
+                <option value="all" {{ $difficulty === 'all' || !$difficulty ? 'selected' : '' }}>All Levels</option>
                 <option value="Beginner" {{ $difficulty === 'Beginner' ? 'selected' : '' }}>🟢 Beginner</option>
-                <option value="Intermediate" {{ $difficulty === 'Intermediate' ? 'selected' : '' }}>🔵 Intermediate</option>
-                <option value="Advanced" {{ $difficulty === 'Advanced' ? 'selected' : '' }}>🔴 Advanced</option>
+                <option value="Intermediate" {{ $difficulty === 'Intermediate' ? 'selected' : '' }}>Intermediate</option>
+                <option value="Advanced" {{ $difficulty === 'Advanced' ? 'selected' : '' }}>Advanced</option>
             </select>
         </div>
 
@@ -24,12 +24,12 @@
         <div class="flex-1">
             <label for="category" class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Program Category</label>
             <select name="category" id="category" class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-fit-green outline-none text-sm">
-                <option value="all" {{ $category === 'all' || !$category ? 'selected' : '' }}>🔮 All Categories</option>
-                <option value="Strength" {{ $category === 'Strength' ? 'selected' : '' }}>💪 Strength</option>
-                <option value="Cardio" {{ $category === 'Cardio' ? 'selected' : '' }}>🏃 Cardio</option>
-                <option value="Yoga" {{ $category === 'Yoga' ? 'selected' : '' }}>🧘 Yoga</option>
-                <option value="HIIT" {{ $category === 'HIIT' ? 'selected' : '' }}>⚡ HIIT</option>
-                <option value="Mixed" {{ $category === 'Mixed' ? 'selected' : '' }}>🥊 Mixed Methods</option>
+                <option value="all" {{ $category === 'all' || !$category ? 'selected' : '' }}>All Categories</option>
+                <option value="Strength" {{ $category === 'Strength' ? 'selected' : '' }}>Strength</option>
+                <option value="Cardio" {{ $category === 'Cardio' ? 'selected' : '' }}>Cardio</option>
+                <option value="Yoga" {{ $category === 'Yoga' ? 'selected' : '' }}>Yoga</option>
+                <option value="HIIT" {{ $category === 'HIIT' ? 'selected' : '' }}>HIIT</option>
+                <option value="Mixed" {{ $category === 'Mixed' ? 'selected' : '' }}>Mixed Methods</option>
             </select>
         </div>
 

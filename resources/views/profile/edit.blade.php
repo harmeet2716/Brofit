@@ -57,10 +57,10 @@
                 <label for="fitness_goal" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5">Fitness Goal</label>
                 <select id="fitness_goal" name="fitness_goal" required
                     class="w-full px-4 py-3 rounded-xl border {{ $errors->has('fitness_goal') ? 'border-red-500' : 'border-gray-200 dark:border-gray-700' }} bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-fit-green outline-none text-sm">
-                    <option value="lose_weight" {{ old('fitness_goal', $user->fitness_goal) === 'lose_weight' ? 'selected' : '' }}>🏃 Lose Weight</option>
-                    <option value="build_muscle" {{ old('fitness_goal', $user->fitness_goal) === 'build_muscle' ? 'selected' : '' }}>💪 Build Muscle</option>
-                    <option value="stay_fit" {{ old('fitness_goal', $user->fitness_goal) === 'stay_fit' ? 'selected' : '' }}>🌿 Stay Fit</option>
-                    <option value="improve_endurance" {{ old('fitness_goal', $user->fitness_goal) === 'improve_endurance' ? 'selected' : '' }}>⚡ Improve Endurance</option>
+                    <option value="lose_weight" {{ old('fitness_goal', $user->fitness_goal) === 'lose_weight' ? 'selected' : '' }}>Lose Weight</option>
+                    <option value="build_muscle" {{ old('fitness_goal', $user->fitness_goal) === 'build_muscle' ? 'selected' : '' }}>Build Muscle</option>
+                    <option value="stay_fit" {{ old('fitness_goal', $user->fitness_goal) === 'stay_fit' ? 'selected' : '' }}>Stay Fit</option>
+                    <option value="improve_endurance" {{ old('fitness_goal', $user->fitness_goal) === 'improve_endurance' ? 'selected' : '' }}>Improve Endurance</option>
                 </select>
                 @error('fitness_goal')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>

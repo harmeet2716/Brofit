@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Services\CourseContentProvider;
 
 class CourseController extends Controller
 {
@@ -128,6 +129,7 @@ class CourseController extends Controller
                 $course = DB::table('courses')->where('_id', $id)->first();
                 if ($course) {
                     $course = (array)$course;
+                    $course['_id'] = (string)($course['_id'] ?? $course['id'] ?? $id);
                     
                     // Check if user is enrolled
                     $enrollment = DB::table('enrollments')
@@ -207,7 +209,11 @@ class CourseController extends Controller
                 }
             }
 
-            return view('courses.show', compact('course', 'isEnrolled', 'progress'));
+            // Load rich weekly plan and features from content provider
+            $weeklyPlan = CourseContentProvider::getWeeklyPlan($course);
+            $features = CourseContentProvider::getFeatures($course);
+
+            return view('courses.show', compact('course', 'isEnrolled', 'progress', 'weeklyPlan', 'features'));
         } catch (\Exception $e) {
             return redirect()->route('courses.index')->with('error', 'Failed to retrieve course details: ' . $e->getMessage());
         }
@@ -253,7 +259,7 @@ class CourseController extends Controller
                 // Let guest flow proceed
             }
 
-            session()->flash('success', 'Successfully enrolled in this course! Let\'s crush it! 🚀');
+            session()->flash('success', 'Successfully enrolled in this course! Let\'s crush it!');
             return redirect()->route('courses.show', $id);
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Enrollment failed: ' . $e->getMessage());

@@ -25,7 +25,7 @@
                 </div>
                 <h2 class="text-3xl font-extrabold text-white mb-1">{{ $exercise['name'] }}</h2>
                 <p class="text-sm text-gray-300 flex items-center">
-                    🔥 Estimated calories burned: ~{{ $exercise['calories_burned_per_set'] }} Cal / set
+ Estimated calories burned: ~{{ $exercise['calories_burned_per_set'] }} Cal / set
                 </p>
             </div>
         </div>
@@ -75,7 +75,7 @@
             <form method="POST" action="{{ route('exercises.add-to-goals', $exercise['_id']) }}">
                 @csrf
                 <button type="submit" class="w-full py-3.5 px-4 bg-fit-green hover:bg-fit-green-dark text-white font-extrabold rounded-2xl transition-all duration-300 shadow-lg shadow-fit-green/20 text-sm">
-                    ⚡ Add to Today's Goals
+ Add to Today's Goals
                 </button>
             </form>
         </div>

@@ -80,10 +80,10 @@
             <select id="fitness_goal" name="fitness_goal" required
                 class="w-full px-4 py-3 rounded-xl border {{ $errors->has('fitness_goal') ? 'border-red-500' : 'border-gray-200 dark:border-gray-700' }} bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-fit-green outline-none text-sm">
                 <option value="">Select your primary goal...</option>
-                <option value="lose_weight" {{ old('fitness_goal') === 'lose_weight' ? 'selected' : '' }}>🏃 Lose Weight</option>
-                <option value="build_muscle" {{ old('fitness_goal') === 'build_muscle' ? 'selected' : '' }}>💪 Build Muscle</option>
-                <option value="stay_fit" {{ old('fitness_goal') === 'stay_fit' ? 'selected' : '' }}>🌿 Stay Fit</option>
-                <option value="improve_endurance" {{ old('fitness_goal') === 'improve_endurance' ? 'selected' : '' }}>⚡ Improve Endurance</option>
+                <option value="lose_weight" {{ old('fitness_goal') === 'lose_weight' ? 'selected' : '' }}>Lose Weight</option>
+                <option value="build_muscle" {{ old('fitness_goal') === 'build_muscle' ? 'selected' : '' }}>Build Muscle</option>
+                <option value="stay_fit" {{ old('fitness_goal') === 'stay_fit' ? 'selected' : '' }}>Stay Fit</option>
+                <option value="improve_endurance" {{ old('fitness_goal') === 'improve_endurance' ? 'selected' : '' }}>Improve Endurance</option>
             </select>
             @error('fitness_goal')
                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -93,7 +93,7 @@
         <!-- Submit Button -->
         <button type="submit"
             class="w-full py-3.5 px-4 bg-fit-green hover:bg-fit-green-dark text-white font-bold rounded-xl transition-all duration-300 shadow-lg shadow-fit-green/30 transform hover:scale-[1.01] text-sm tracking-wide">
-            Create My FitNexus Account 🚀
+            Create My FitNexus Account
         </button>
 
         <p class="text-center text-sm text-gray-500 dark:text-gray-400">

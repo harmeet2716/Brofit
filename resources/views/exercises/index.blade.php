@@ -12,7 +12,7 @@
     <div class="overflow-x-auto pb-2 flex gap-2">
         <a href="{{ route('exercises.index', ['muscle_group' => 'all', 'search' => $search]) }}"
             class="px-4 py-2.5 rounded-xl font-bold text-sm whitespace-nowrap transition-all duration-200 {{ !$muscleGroup || $muscleGroup === 'all' ? 'bg-fit-green text-white shadow-md shadow-fit-green/10' : 'bg-gray-50 dark:bg-gray-850 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-150 dark:border-gray-800' }}">
-            🌟 All Exercises
+ All Exercises
         </a>
         @foreach($muscleGroups as $mg)
             <a href="{{ route('exercises.index', ['muscle_group' => $mg, 'search' => $search]) }}"
@@ -30,7 +30,7 @@
             <input type="text" name="search" value="{{ $search }}" placeholder="Search exercises by name (e.g. Squat, Push-up)..."
                 class="w-full pl-4 pr-10 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-fit-green outline-none text-sm">
             <span class="absolute right-3.5 top-3.5 text-gray-450">
-                🔍
+
             </span>
         </div>
 

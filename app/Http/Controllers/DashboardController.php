@@ -30,7 +30,7 @@ class DashboardController extends Controller
             } else {
                 $greeting = "Good evening";
             }
-            $greeting .= ", " . ($user->name ?? 'Fitness Champion') . " 💪";
+            $greeting .= ", " . ($user->name ?? 'Fitness Champion');
 
             // 2. Random motivational quote
             $quotes = [
@@ -184,7 +184,7 @@ class DashboardController extends Controller
 
         } catch (\Exception $e) {
             // Graceful Mock Fallback if database fails/is offline
-            $greeting = "Welcome, Fitness Champion! 💪";
+            $greeting = "Welcome, Fitness Champion!";
             $quote = "Every journey starts with a single step. Start your premium fitness portal preview today!";
             $coursesEnrolledCount = 3;
             $workoutsLoggedThisWeek = 4;

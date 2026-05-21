@@ -19,7 +19,7 @@
                 $goalLabel = $goalLabels[auth()->user()->fitness_goal ?? 'stay_fit'] ?? 'Stay Fit';
             @endphp
             <span class="inline-flex items-center mt-3 px-4 py-1.5 rounded-full text-xs font-bold bg-white/20 backdrop-blur-sm text-white border border-white/30">
-                🎯 Goal: {{ $goalLabel }}
+ Goal: {{ $goalLabel }}
             </span>
             <p class="mt-4 text-sm text-white/80 italic max-w-md">"{{ $quote }}"</p>
         </div>
@@ -135,7 +135,7 @@
                 <span class="text-xs text-gray-500 font-semibold">Complete</span>
             </div>
         </div>
-        <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 text-center">{{ $todayCompletionPercent < 50 ? 'Keep pushing! You can do it! 💪' : ($todayCompletionPercent < 100 ? 'Almost there! Finish strong! 🔥' : 'Amazing! All goals crushed today! 🏆') }}</p>
+        <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 text-center">{{ $todayCompletionPercent < 50 ? 'Keep pushing! You can do it!' : ($todayCompletionPercent < 100 ? 'Almost there! Finish strong!' : 'Amazing! All goals crushed today!') }}</p>
     </div>
 </div>
 

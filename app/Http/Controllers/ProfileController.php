@@ -35,6 +35,7 @@ class ProfileController extends Controller
                 $course = DB::table('courses')->where('_id', $enrollment['course_id'])->first();
                 if ($course) {
                     $course = (array)$course;
+                    $course['_id'] = (string)($course['_id'] ?? $course['id'] ?? $enrollment['course_id']);
                     $enrollmentData = [
                         'course_id' => $course['_id'],
                         'name' => $course['name'],

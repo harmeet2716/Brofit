@@ -47,7 +47,7 @@
         <!-- Submit Button -->
         <button type="submit"
             class="w-full py-3.5 px-4 bg-fit-green hover:bg-fit-green-dark text-white font-bold rounded-xl transition-all duration-300 shadow-lg shadow-fit-green/30 transform hover:scale-[1.01] text-sm tracking-wide">
-            Sign In to FitNexus ⚡
+            Sign In to FitNexus
         </button>
 
         <p class="text-center text-sm text-gray-500 dark:text-gray-400">
